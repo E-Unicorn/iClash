@@ -33,3 +33,21 @@ int main()
     return 0;
 
 }
+
+
+void init_obs(int taille_x, int taille_y)
+{    
+    int k;
+    for(k=1; k<=nombre_mines; k++)                             //       On distribu les obstacles dans le tableau aléatoirement
+    {
+        i=aleat(taille_x); j=aleat(taille_y);
+        if(tableau[i][j] != -3)                                //       La valeur -3 représente l'obstacle
+        {
+            tableau[i][j] = -3;
+        }
+        else
+        {
+            k--;
+        }
+    }
+}
