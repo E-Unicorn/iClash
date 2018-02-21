@@ -13,11 +13,13 @@ void set_color(int text_color,int background_color);
 void display_result(int **map, int size, int turn, int players);
 
 
+
 void set_color(int text_color,int background_color)
 {
         HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
         SetConsoleTextAttribute(H,background_color*16+text_color);
 }
+
 
 
 void play_turn(int **map, int size, int player, int turn)
@@ -35,11 +37,11 @@ void play_turn(int **map, int size, int player, int turn)
 }
 
 
+
 void display_result(int **map, int size, int turn, int players)
 {
     int i,j = players, rank = 1;
 
-    for(i = 0)
     printf("                                ##########CARTE FINALE##########                                \n");
     display_map(map,size);
 
@@ -51,11 +53,11 @@ void display_result(int **map, int size, int turn, int players)
     {
         if( i % 2 == 0)
         {
-            printf("xxxxxxxxxxxxxxxxxxxxxxxx");
+            printf("________________________");
         }
-        if( j % 2 != 0)
+        if( i % 2 != 0)
         {
-            printf("x ");
+            printf("| ");
 
             switch (rank)
             {
@@ -79,7 +81,7 @@ void display_result(int **map, int size, int turn, int players)
                     break;
             }
 
-            printf(" x player %2d x", score[j]); //Le tableau score doit etre initialise dans la fonction de jeu
+            printf(" | player %2d |", score[j]); //Le tableau score doit etre initialise dans la fonction de jeu
 
             j--;
             rank++;
