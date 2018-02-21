@@ -10,6 +10,7 @@
 
 void play_turn(int **map, int size, int player, int turn);
 void set_color(int text_color,int background_color);
+void display_result(int **map, int size, int turn, int players);
 
 
 void set_color(int text_color,int background_color)
