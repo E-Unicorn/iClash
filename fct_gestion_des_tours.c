@@ -16,7 +16,7 @@ void display_result(int **map, int size, int turn, int players);
 
 void set_color(int text_color,int background_color)
 {
-        HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
+        HANDLE H = GetStdHandle(STD_OUTPUT_HANDLE);
         SetConsoleTextAttribute(H,background_color*16+text_color);
 }
 
