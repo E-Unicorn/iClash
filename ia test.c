@@ -1,10 +1,19 @@
+﻿/** Fonction ia test
+    Droper
+
+    Created by DROPER on 15/02/2018.
+    Copyright © 2018 DROPER. All rights reserved.
+**/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
 
-int ia_random(int carte[carte_x][carte_y], int statut); //ia qui fait tout au pif
-int mouvement_random(int carte[carte_x][carte_y]);      //fonction qui fait les mvts random de l'ia random
-int attaque_random();
+// ********** PROTOTYPES **********
+int ia_random(int carte[carte_x][carte_y], int statut); //ia qui joue aléatoirement
+int mouvement_random(int carte[carte_x][carte_y]);      //fonction qui fait les mouvements random de l'ia_random
+// ********** PROTOTYPES **********
 
 
 int mouvement_random(carte[carte_x][carte_y])
@@ -30,25 +39,18 @@ int mouvement_random(carte[carte_x][carte_y])
 }
 
 
-int attaque_random()
-{
-  
-}
 
 int ia_random(int carte[carte_x][carte_y], int statut)  //le statut est un booléen qui montre si l'ia est en mode defense ou non
 {
   int mouvement, attaque, choix;
   statut = 0;
-  choix = rand() % 3;
+  choix = rand() % 2;
   switch (choix)
   {
     case 1:
-    /* carte[carte_x][carte_y] = */  mouvement_random();     // je sais pas i c'est avec ou sans le commentaire
+    /* carte[carte_x][carte_y] = */  mouvement_random();     // je sais pas si c'est avec ou sans le commentaire
       break;
     case 2:
-      attaque_random();
-      break;
-    case 3:
       statut = 1;
       break;
     default:
@@ -57,7 +59,6 @@ int ia_random(int carte[carte_x][carte_y], int statut)  //le statut est un bool�
   }
   return (carte[carte_x][carte_y], statut)
 }
-
 
 
 
