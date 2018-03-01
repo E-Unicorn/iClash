@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char const *argv[])
+{
+	char map[240][240];
+
+	for (int i = 0; i <= 239; ++i)
+	{
+		for (int j = 0; j <= 239; ++j)
+		{
+			if (i == 0 || i == 239 || j == 0 || j == 239)
+			{
+				map[i][j] = 79;
+			}
+			else
+			{
+				map[i][j] = 88;
+			}
+		}
+		printf("\n");
+	}
+
+	for (int i = 0; i <= 239; ++i)
+	{
+		for (int j = 0; j <= 239; ++j)
+		{
+			printf("%c",map[i][j] );
+		}
+		printf("\n");
+	}
+	shrink(240,map);
+
+	return 0;
+}
+
+int shrink(int taille, int carte)
+{
+	int i,j;
+
+	
+	for (int k = 0; k < 120; ++k)
+	{
+		int carte[taille - 2][taille - 2];
+
+		for (int i = 0; i < taille - 1; ++i)
+		{
+			for (int j = 0; j < taille - 1; ++j)
+			{
+				if (i == 0 || i == taille - 1 || j == 0 || j == taille - 1)
+			{
+				map[i][j] = 79;
+			}
+			else
+			{
+				map[i][j] = 88;
+			}
+			}
+		}
+		taille = taille - 2;
+		for (int i = 0; i <= taille - 1; ++i)
+		{
+			for (int j = 0; j <= taille - 1; ++j)
+			{
+				printf("%c",map[i][j] );
+			}
+			printf("\n");
+		}
+
+	}
+}
