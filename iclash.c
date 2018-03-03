@@ -24,7 +24,7 @@ int main()
         printf("\n");
         set_color(15, 0);
 
-        printf("\n Bienvenue dans le jeu iClash ! \nLes regles sont tres simples, il faut rester en vie le plus longtemps possible. Pour cela chaque joueur pourra se deplacer d'une à six cases par tour. En plus les joueurs pourront attaquer leurs adversaires pour leur oter la vie. A chaque tour la carte va retraissir, par consequent pour qu'un joueur soit elimine il faut soit qu'il sorte de la carte soit qu'un autre joueur le tue. \n");
+        printf("\n Bienvenue dans le jeu iClash ! \nLes regles sont tres simples, il faut rester en vie le plus longtemps possible. Pour cela chaque joueur pourra se deplacer d'une à six cases par tour. En plus les joueurs pourront attaquer leurs adversaires pour leur oter la vie. A chaque tour la carte va retrecir, par consequent pour qu'un joueur soit elimine il faut soit qu'il sorte de la carte soit qu'un autre joueur le tue. \n");
 
         printf("1.Nouvelle Partie\n2.Resultat Derniere Partie\n3.Commande\n4. Sortie\n-> ");
         scanf("%d", &choice);
@@ -50,7 +50,7 @@ int main()
             break;
         default:
             printf("ERROR\n");
-            break
+            break;
     }
 
 
