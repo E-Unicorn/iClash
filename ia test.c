@@ -11,12 +11,12 @@
 
 
 // ********** PROTOTYPES **********
-int ia_random(int carte[carte_x][carte_y], int statut); //ia qui joue aléatoirement
-int mouvement_random(int carte[carte_x][carte_y]);      //fonction qui fait les mouvements random de l'ia_random
+int ia_random(int carte[][], int carte_x, int carte_y); //ia qui joue aleatoirement
+int mouvement_random(int carte[][], int carte_x, int carte_y);      //fonction qui fait les mouvements random de l'ia_random
 // ********** PROTOTYPES **********
 
 
-int mouvement_random(carte[carte_x][carte_y])
+int mouvement_random(int carte[][], int carte_x, int carte_y)
 {
   int choix;
   choix = rand() %;
@@ -35,29 +35,16 @@ int mouvement_random(carte[carte_x][carte_y])
       carte[carte_x][carte_y] = carte[carte_x][carte_y - 1];
       break;
   }
-  return carte[carte_x][carte_y]
+  return carte[carte_x][carte_y];
 }
 
 
 
-int ia_random(int carte[carte_x][carte_y], int statut)  //le statut est un booléen qui montre si l'ia est en mode defense ou non
+int ia_random(int carte[][], int carte_x, int carte_y)  //le statut est un booleen qui montre si l'ia est en mode defense ou non
 {
   int mouvement, attaque, choix;
-  statut = 0;
-  choix = rand() % 2;
-  switch (choix)
-  {
-    case 1:
-    /* carte[carte_x][carte_y] = */  mouvement_random();     // je sais pas si c'est avec ou sans le commentaire
-      break;
-    case 2:
-      statut = 1;
-      break;
-    default:
-      /* carte[carte_x][carte_y] = */ mouvement_random();
-      break;
-  }
-  return (carte[carte_x][carte_y], statut)
+  mouvement_random(int carte[][], int carte_x, int carte_y);
+  return (carte[carte_x][carte_y]);
 }
 
 
@@ -65,6 +52,6 @@ int ia_random(int carte[carte_x][carte_y], int statut)  //le statut est un bool�
 
 int main()
 {
-  ia_random(int carte[carte_x][carte_y], int statut);
+  ia_random(int carte[][], int carte_x, int carte_y);
   return 0;
 }
