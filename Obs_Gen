@@ -1,0 +1,28 @@
+# define nombre_obs   40
+
+int aleat(int maxi)                                    // La fonction va choisir une coordonnée de i et j au hasard
+{
+    return 1 + (rand() % maxi);
+}
+
+void init_obs(int taille_x, int taille_y)
+{
+     int k;
+     for(k=1; k<=nombre_obs; k++)                     // On distribu les obstacles dans le tableau aléatoirement
+     {
+         i=aleat(taille_x); j=aleat(taille_y);
+         if(tableau[i][j] != -3)                      // La valeur -3 représente l'obstacle
+         {
+             tableau[i][j] = -3;
+         }
+         else
+         {
+             k--;
+         }
+     }
+ }
+ 
+ 
+ 
+ 
+ // int test_obs()
