@@ -11,6 +11,7 @@
 #include <windows.h>
 
 void set_color(int text_color,int background_color);
+int **crea_map(int size, int players);
 
 int main()
 {
@@ -52,28 +53,6 @@ int main()
             printf("ERROR\n");
             break;
     }
-
-
-    //
-    // int a[22][22];
-    // int i,j;
-    //
-    // for(i = 0 ; i <= 21 ; i++)
-    // {
-    //     for(j = 0 ; j <= 21 ; j++)
-    //     {
-    //         if( i == 0 || i == 21)
-    //         {
-    //             a[i][j] = '_';
-    //         }
-    //         if( j == 0 || j == 21)
-    //         {
-    //             a[i][j] = '|';
-    //         }
-    //     }
-    //     printf("\n");
-    // }
-    // printf(a); // attention on ne peut pas afficher un tableau
     return 0;
 
 }
@@ -85,3 +64,16 @@ void set_color(int text_color,int background_color)
         SetConsoleTextAttribute(H,background_color*16+text_color);
 }
 
+
+int **crea_map(int size, int players)
+{
+	int **map = malloc(size * sizeof(int*)); // map prend size * la taille d'un tableau de int (int*)
+	int i,j;
+
+	for(i = 0; i < size; i++)
+	{
+		map[i] = malloc(size * sizeof(int)); // map[i] (la ligne du tableau) prend size case de int
+	}
+
+	return map; // On renvoit la carte initialisé avec la bonne taille
+}
