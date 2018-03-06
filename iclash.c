@@ -10,8 +10,11 @@
 #include <stdlib.h>
 #include <windows.h>
 
-void set_color(int text_color,int background_color);
+
+int aleat(int maxi);
+void init_obs(int taille_x, int taille_y);
 int **crea_map(int size, int players);
+
 
 int main()
 {
@@ -58,22 +61,46 @@ int main()
 }
 
 
-void set_color(int text_color,int background_color)
-{
-        HANDLE H = GetStdHandle(STD_OUTPUT_HANDLE);
-        SetConsoleTextAttribute(H,background_color*16+text_color);
-}
 
-
-int **crea_map(int size, int players)
+//fct qui crée la carte
+int **crea_map(int size_y, int size_x)
 {
-	int **map = malloc(size * sizeof(int*)); // map prend size * la taille d'un tableau de int (int*)
+	int **map = malloc(size_y * sizeof(int*)); // map prend size * la taille d'un tableau de int (int*)
 	int i,j;
 
 	for(i = 0; i < size; i++)
 	{
-		map[i] = malloc(size * sizeof(int)); // map[i] (la ligne du tableau) prend size case de int
+		map[i] = malloc(size_x * sizeof(int)); // map[i] (la ligne du tableau) prend size case de int
 	}
 
 	return map; // On renvoit la carte initialisé avec la bonne taille
 }
+
+
+//fct qui définie aléatoirement la position de l'obs
+int aleat(int maxi) // La fonction va choisir une coordonnée de i et j au hasard
+{
+    return 1 + (rand() % maxi);
+}
+
+
+//fct qui place les obs sur la carte
+void init_obs(int size_x, int size_y)
+{
+     int k;
+     int nbr_obs = 40;
+
+     for(k = 1; k <= nombre_obs; k++)// On distribu les obstacles dans le tableau aléatoirement
+     {
+         i = aleat(taille_x);
+         j = aleat(taille_y);
+         if(tableau[i][j] != -3) // La valeur -3 représente l'obstacle
+         {
+             tableau[i][j] = -3;
+         }
+         else
+         {
+             k--;
+         }
+     }
+ }
