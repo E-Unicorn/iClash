@@ -12,6 +12,7 @@
 
 //la fonction sera un mouvement completement random pour la demo
 
+
 int mouvement_random(int **map, int x, int y)
 {
   int choix;
@@ -19,16 +20,31 @@ int mouvement_random(int **map, int x, int y)
   switch(choix)
   {
     case 1:
-      map[x][y] = map[x + 1][y];
+      if (map[x+1]==-3) {return map[x][y];}
+      else
+      {
+        map[x][y] = map[x + 1][y];
+      }
       break;
     case 2:
-      map[x][y] = map[x - 1][y];
+      if (map[x-1]==-3) {return map[x][y];}
+      else
+      {
+        map[x][y] = map[x - 1][y];
+      }
       break;
     case 3:
-      map[x][y] = map[x][y + 1];
+      if (map[y+1]==-3) {return map[x][y];}
+      else
+      {
+        map[x][y] = map[x][y + 1];
+      }
       break;
     case 4:
-      map[x][y] = map[x][y - 1];
+      if (map[y-1]==0) {return map[x][y];}
+      {
+        map[x][y] = map[x][y - 1];
+      }
       break;
   }
   return map[x][y];
