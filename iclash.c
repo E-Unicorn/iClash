@@ -111,15 +111,20 @@ void init_obs(char **tableau, int size)
     }
 }
 
-int inserer_player(char **tableau, int n_joueur, int size_x, int size_y)
+int inserer_player(char **tableau, int n_joueur, int size)
 {
     
     int k;
     
     for (k = 1; i <= nb_player; k++)// mettre les joueurs sur la map
     {
-        i = aleat(taille_x);
-        j = aleat(taille_y);
+        i = aleat(size);
+        j = aleat(size);
+        
+        if (i == 0 || i == size || j == 0 || j == size || tableau[i][j] == -3) // Condition pour éviter les bordures et les obstacles
+        {
+            k--;
+        }
         
         if(tableau[i][j] != 1) // La valeur 1 représente un joueur
         {
