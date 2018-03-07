@@ -12,7 +12,7 @@
 
 
 int aleat(int maxi);
-void init_obs(int taille_x, int taille_y);
+void init_obs(int **tableau, int size);
 int **crea_map(int size, int players);
 void play_turn(int **map, int size, int player, int turn);
 void display_result(int **map, int size, int turn, int players);
