@@ -15,6 +15,17 @@ int aleat(int maxi) // La fonction va choisir une coordonnée de i et j au hasar
     return 1 + (rand() % maxi);
 }
 
+void afficher_carte()   // fonction qui affiche la carte
+{
+  for (i = 0; i <= taille-1; ++i)
+	{
+		for (j = 0; j <= taille-1; ++j)
+		{
+			printf("%c",map[i][j]);
+		}
+		printf("\n");
+	}
+}
 
 
 //la fonction sera un mouvement completement random pour la demo
@@ -32,6 +43,7 @@ int mouvement_random(int **map, int x, int y)
         else
         {
           map[x][y] = map[x + 1][y];
+          afficher_carte();
         }
         break;
       case 2:
@@ -39,6 +51,7 @@ int mouvement_random(int **map, int x, int y)
         else
         {
           map[x][y] = map[x - 1][y];
+          afficher_carte();
         }
         break;
       case 3:
@@ -46,12 +59,14 @@ int mouvement_random(int **map, int x, int y)
         else
         {
           map[x][y] = map[x][y + 1];
+          afficher_carte();
         }
         break;
       case 4:
         if (map[y-1]==-3) {return map[x][y];}
         {
           map[x][y] = map[x][y - 1];
+          afficher_carte();
         }
         break;
     }
