@@ -87,25 +87,29 @@ int aleat(int maxi) // La fonction va choisir une coordonnée de i et j au hasar
 
 
 //fct qui place les obs sur la carte
-void init_obs(int size_x, int size_y)
+void init_obs(char **tableau, int size)
 {
-     int k;
-     int nbr_obs = 40;
+    int k;
+    int nbr_obs = 40;
 
-     for(k = 1; k <= nombre_obs; k++)// On distribu les obstacles dans le tableau aléatoirement
-     {
-         i = aleat(taille_x);
-         j = aleat(taille_y);
-         if(tableau[i][j] != -3) // La valeur -3 représente l'obstacle
-         {
-             tableau[i][j] = -3;
-         }
-         else
-         {
-             k--;
-         }
-     }
- }
+    for(k = 1; k <= nombre_obs; k++)// On distribu les obstacles dans le tableau aléatoirement
+    {
+        i = aleat(size);
+        j = aleat(size);
+        if (i == 0 || i == size || j == 0 || j == size)		// Condition pour éviter les bordures
+        {
+            k--;
+        }
+        if(tableau[i][j] != -3) // La valeur -3 représente l'obstacle
+        {
+            tableau[i][j] = -3;
+        }
+        else
+        {
+            k--;
+        }
+    }
+}
 
 int inserer_player(char **tableau, int n_joueur, int size_x, int size_y)
 {
