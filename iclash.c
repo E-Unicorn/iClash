@@ -107,6 +107,29 @@ void init_obs(int size_x, int size_y)
      }
  }
 
+int inserer_player(char **tableau, int n_joueur, int size_x, int size_y)
+{
+    
+    int k;
+    
+    for (k = 1; i <= nb_player; k++)// mettre les joueurs sur la map
+    {
+        i = aleat(taille_x);
+        j = aleat(taille_y);
+        
+        if(tableau[i][j] != 1) // La valeur 1 représente un joueur
+        {
+    
+            tableau[i][j] = 1;
+        }
+        else
+        {
+            k--;
+        }
+    }
+}
+
+
 
  //fct qui définie un tour type
  void play_turn(int **map, int size, int player, int turn)
