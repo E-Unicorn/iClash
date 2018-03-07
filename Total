@@ -58,6 +58,29 @@ int crea_map(int taille, int n_joueur)
 	}
 }
 
+int inserer_player(char **tableau, int n_joueur, int size)
+{
+    
+    int k;
+    
+    for (k = 1; i <= nb_player; k++)// mettre les joueurs sur la map
+    {
+        i = aleat(size);
+        j = aleat(size);
+        
+        if (i == 0 || i == size || j == 0 || j == size || tableau[i][j] == -3) // Condition pour éviter les bordures et les obstacles
+        {
+            k--;
+        }
+        
+        if(tableau[i][j] != 1) // La valeur 1 représente un joueur
+        {
+    
+            tableau[i][j] = 1;
+        }
+    }
+}
+
 int tour(int joueur[n_joueur])
 {
 	for (int i = 0; i < nombre_joueur - 1; ++i)
