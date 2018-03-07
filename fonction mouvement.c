@@ -23,35 +23,38 @@ int mouvement_random(int **map, int x, int y)
   int choix, a;
   a = aleat(6);
   choix = rand() %;
-  switch(choix)
+  for (i=0; i<a; i++)
   {
-    case 1:
-      if (map[x+a]==-3) {return map[x][y];}
-      else
-      {
-        map[x][y] = map[x + a][y];
-      }
-      break;
-    case 2:
-      if (map[x-a]==-3) {return map[x][y];}
-      else
-      {
-        map[x][y] = map[x - a][y];
-      }
-      break;
-    case 3:
-      if (map[y+a]==-3) {return map[x][y];}
-      else
-      {
-        map[x][y] = map[x][y + a];
-      }
-      break;
-    case 4:
-      if (map[y-a]==0) {return map[x][y];}
-      {
-        map[x][y] = map[x][y - a];
-      }
-      break;
+    switch(choix)
+    {
+      case 1:
+        if (map[x+1]==-3) {return map[x][y];}
+        else
+        {
+          map[x][y] = map[x + 1][y];
+        }
+        break;
+      case 2:
+        if (map[x-1]==-3) {return map[x][y];}
+        else
+        {
+          map[x][y] = map[x - 1][y];
+        }
+        break;
+      case 3:
+        if (map[y+1]==-3) {return map[x][y];}
+        else
+        {
+          map[x][y] = map[x][y + 1];
+        }
+        break;
+      case 4:
+        if (map[y-1]==-3) {return map[x][y];}
+        {
+          map[x][y] = map[x][y - 1];
+        }
+        break;
+    }
   }
   return map[x][y];
 }
