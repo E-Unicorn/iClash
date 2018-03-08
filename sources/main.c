@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     pos.y = 7;
 
     int **map = init_map(NBR_BLOCK_Y, NBR_BLOCK_X);
+    Player *players = init_players(NBR_PLAYERS);
 
     SDL_Init(SDL_INIT_VIDEO);
     SDL_WM_SetCaption("Bomberman", NULL);
@@ -27,6 +28,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
+    place_characrters(map, players);
     place_bombe(map, pos);
     display_map(screen, map);
 

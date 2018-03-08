@@ -28,6 +28,27 @@ int** init_map(int size_y, int size_x)
     return map;
 }
 
+Player* init_players(int nbr_player)
+{
+    int i, x, y;
+    Player *players = (Player*) malloc(nbr_player * sizeof(Player));
+
+    for(i = 0; i < nbr_player; i++)
+    {
+        players[i].id = i;
+        do
+        {
+            x = rand() % NBR_BLOCK_X;
+            y = rand() % NBR_BLOCK_Y;
+        } while(x % 2 == 0 || y % 2 == 0 || x == 0 || y == 0);
+
+        players[i].position.x = x;
+        players[i].position.y = y;
+
+    }
+
+    return players;
+}
 
 void place_bombe(int **map, SDL_Rect position) // Le joueur place une bombe juste devant lui
 {
